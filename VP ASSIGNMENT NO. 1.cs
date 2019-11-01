@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -112,56 +112,7 @@ namespace ConsoleApp24
         //To List Top 3 of Class
         public static void topThree(Student prof)
         {
-            double firstStd=0;
-            double secondStd=0;
-            double thirdStd=0;
-            int first = 0;
-            int second = 0;
-            int third = 0;
-
-            string[] lines = File.ReadAllLines(@"C:\\Users\\Anam Shafique\\Desktop\\Student.txt"); 
-            string[] stId = new string[lines.Length];
-            string[] stName = new string[lines.Length];
-            string[] stSem = new string[lines.Length];
-            double[] stCgpa= new double[lines.Length];
-            string[] stDep = new string[lines.Length];
-            string[] stUni = new string[lines.Length];
-            for(int i=0; i<lines.Length; i=i+7)
-            {
-                stId[i] = lines[i];
-                stName[i] = lines[i + 1];
-                stSem[i] = lines[i + 2];
-                stCgpa[i] =Convert.ToDouble(lines[i + 3]);
-                stDep[i] = lines[i + 4];
-                stUni[i] = lines[i + 5];
-            }
-            for (int i = 0; i < stCgpa.Length; i++)
-            {
-                if (stCgpa[i] > firstStd)
-                {
-                    thirdStd = secondStd;
-                    secondStd = firstStd;
-                    firstStd = stCgpa[i];
-                    first = i;
-                }
-                else if (stCgpa[i] > secondStd)
-                {
-                    thirdStd = secondStd;
-                    secondStd = stCgpa[i];
-                    second = i;
-                }
-                else if (stCgpa[i] > thirdStd)
-                {
-                    thirdStd = stCgpa[i];
-                    third = i;
-                }
-            }
-            Console.WriteLine("First Student:");
-            Console.WriteLine(stId[first] +"\t" + stName[first] + "\t" + stSem[first] + "\t" + stCgpa[first] + "\t" + stDep[first] + "\t" + stUni[first] + "\t" +"\n");
-            Console.WriteLine("Second Student:");
-            Console.WriteLine(stId[second] + "\t" + stName[second] + "\t" + stSem[second] + "\t" + stCgpa[second] + "\t" + stDep[second] + "\t" + stUni[second] + "\t" + "\n");
-            Console.WriteLine("Third Student:");
-            Console.WriteLine(stId[third] + "\t" + stName[third] + "\t" + stSem[third]  + "\t" + stCgpa[third] + "\t" + stDep[third] + "\t" + stUni[third] + "\t" + "\n");
+            
         }
         //To Delete Student Record
         public static void delete(Student prof)
